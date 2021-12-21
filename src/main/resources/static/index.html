@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Secret Santa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/jpg" href="favicon.ico"/>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+<div class="content">
+    <div class="players-content">
+        <form id="players-form">
+            <div id="players-info">
+                <div hidden="hidden" id="player-mock"></div>
+            </div>
+        </form>
+        <div id="add-players-btns">
+            <button class="add-player-btn" onclick="addPlayer()">+</button>
+            <button class="add-players-btn" onclick="submitPlayers()">ADD PLAYERS</button>
+        </div>
+    </div>
+
+
+    <div hidden="hidden">
+        <div id="player-info-template">
+            <div class="col-2 input-block">
+                <label for="first-name-{index}" class="form-label">First Name:</label>
+                <input type="text" class="form-control" id="first-name-{index}">
+            </div>
+            <div class="col-2 input-block">
+                <label for="last-name-{index}" class="form-label">Last Name:</label>
+                <input type="text" class="form-control" id="last-name-{index}">
+            </div>
+            <div class="col-3 input-block">
+                <label for="email-{index}" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email-{index}">
+            </div>
+            <div id="enemies-{index}" class="col-2 input-block" hidden="hidden">
+                <label for="select-enemies-{index}">Enemies:</label>
+                <select id="select-enemies-{index}" multiple class="browser-default custom-select" size="2">
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="santa-img">
+        <img src="santa.png">
+    </div>
+
+</div>
+
+<div id="start-btn" hidden>
+    <button class="start" onclick="start()">START</button>
+</div>
+</body>
+</html>
